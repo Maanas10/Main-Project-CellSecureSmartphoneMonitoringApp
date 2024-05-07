@@ -1,0 +1,105 @@
+{% extends 'admin/dashnew.html'  %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<div class="col-xl-auto">
+            <div class="card card-user">
+              <div class="card-header">
+                  <h3 class="card-title"><center>Allocate Work</center></h3>
+              </div>
+              <div class="card-body">
+                <form action="/myapp/allocatework_post/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                  <div class="row">
+                    <div class="col-md-8 pr-1">
+                      <div class="form-group" >
+                        <label>Work</label>
+                          <br>
+                          <select name="work" class="form-control w-75"  required>
+                          <option value="">Select</option>
+
+                              {% for i in data1 %}
+                                  <option value="{{ i.id }}">{{ i.work_tittle }}</option>
+
+                              {% endfor %}
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-8 pr-1">
+                      <div class="form-group">
+
+                        <label>Employee</label>
+                          <br>
+                          <select name="employee" class="form-control w-75"  required>
+                          <option value="">select</option>
+                              {% for i in data %}
+                                  <option value="{{ i.id }}">{{ i.f_name }}</option>
+
+                              {% endfor %}
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+
+                 <div class="row">
+  <div class="col-md-6 pr-1">
+    <div class="form-group">
+      <label>Start Date</label>
+      <input type="date" id="alldate" name="alldate" class="form-control" required>
+      <script>
+        // Get today's date
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+        var yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("alldate").min = today;
+      </script>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 pr-1">
+    <div class="form-group">
+      <label>Dead Line</label>
+      <input type="date" id="ddate" name="dddate" class="form-control">
+      <script>
+        // Get selected date from Allocated Date input
+        document.getElementById("alldate").addEventListener("change", function() {
+          var selectedDate = this.value;
+          document.getElementById("ddate").min = selectedDate;
+        });
+      </script>
+    </div>
+  </div>
+</div>
+
+
+
+
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                      <button type="submit" class="btn btn-primary btn-round" name="allocate" id="allocate" value="add">Allocate</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+</body>
+</html>
+{% endblock %}

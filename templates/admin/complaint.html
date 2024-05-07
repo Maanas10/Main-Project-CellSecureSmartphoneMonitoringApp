@@ -1,0 +1,85 @@
+{% extends 'admin/dashnew.html'  %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+              <center>  <h4 class="card-title" align="center">  COMPLAINTS </h4></center>
+
+
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                <form action="" method="POST" >
+                {% csrf_token %}
+
+
+{#                <table>#}
+{#                    <tr>#}
+{##}
+{#                        <td><input type="text" class="form-control" placeholder="Search here..." name="search"> </td>#}
+{#                        <td><button type="submit" class="btn btn-primary" name="viewwork" id="viewwork" value="viewwork">search</button>#}
+{#                        </td>#}
+{##}
+{#                    </tr>#}
+{#                </table>#}
+                  <table class="table">
+                    <tr class=" text-primary">
+                      <th>
+                        Slno
+                      </th>
+                      <th>
+                        Employee
+                      </th>
+                      <th>
+                       Complaint Description
+                      </th>
+                        <th>
+                       Suggestion
+                      </th>
+
+                      <th>Date&nbsp;</th>
+                        <th>Reply</th>
+                      <th>&nbsp;</th>
+
+                    </tr>
+                      {% for i in data %}
+                    <tbody>
+{#                      <>#}
+                        <td>{{ forloop.counter }}&nbsp;</td>
+                          <td>{{ i.EMPLOYEE.f_name }}&nbsp;</td>
+                        <td>{{ i.c_description }}&nbsp;</td>
+                        <td>{{ i.c_incident }}&nbsp;</td>
+
+                        <td>{{ i.date }}&nbsp;</td>
+                          <td>{{ i.reply }}</td>
+
+                      <td> <button onclick="window.location.href='/myapp/admreply/{{ i.id }}#12'" type="button" class="btn btn-success">
+
+                                                Reply
+                                  </button></td>
+                      </tr>
+{% endfor %}
+                    </tbody>
+                  </table>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+</body>
+</html>
+
+{% endblock %}

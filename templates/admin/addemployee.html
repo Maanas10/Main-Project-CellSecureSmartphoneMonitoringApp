@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>Sovo</title>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="/static/dashboard/assets/images/favicon.ico" type="image/png">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="/static/dashboard/assets/css/bootstrap.min.css">
+
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="/static/dashboard/assets/css/all.css">
+
+    <!--====== nice select css ======-->
+    <link rel="stylesheet" href="/static/dashboard/assets/css/nice-select.css">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="/static/dashboard/assets/css/default.css">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="/static/dashboard/assets/css/style.css">
+
+
+</head>
+<style>
+    .header-nav {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    background-color: #0074dd;;
+    padding: 16px 15px;
+    margin-top: -30px;
+}
+</style>
+<body>
+
+
+    <!--====== HEADER PART START ======-->
+
+    <header class="header-area">
+        <div class="header-nav">
+            <div class="container-lg">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="navigation">
+                            <nav class="navbar navbar-expand-lg navbar-light ">
+                                <a class="navbar-brand" href="#"><img src="/static/dashboard/assets/images/logo.png" alt=""></a>
+                                <!-- logo -->
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button> <!-- navbar toggler -->
+
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                    <ul class="navbar-nav m-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="/myapp/dashnew/">Home</a>
+                                            <!-- <ul class="sub-menu">
+                                                <li><a href="index.html">Home 1</a></li>
+                                                <li><a href="index-2.html">Home 2</a></li>
+                                            </ul> -->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link">Employee&nbsp;&nbsp;<i
+                                                class="fal fa-angle-down"></i></a>
+                                            <ul class="sub-menu">
+                                                <li><a href="/myapp/addemployee/#12">Add Employee</a></li>
+                                                <li><a href="/myapp/viewemployee/#12">View Employee</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link">Work&nbsp;&nbsp;<i
+                                                    class="fal fa-angle-down"></i></a>
+                                            <ul class="sub-menu">
+                                                <li><a href="/myapp/addwork/#12">Add Work</a></li>
+                                                <li><a href="/myapp/viewwork/#12">View work</a></li>
+                                                <li><a href="/myapp/allocatework/#12">Allocate work</a></li>
+                                                <li><a href="/myapp/viewallocatedwork/#12">View Allocated work</a></li>
+
+
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Complaints</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/myapp/managephones/#12">Manage Phones</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Daily Reports</a>
+                                        </li>
+
+
+                                    </ul>
+                                </div> <!-- navbar collapse -->
+                                <div class="navbar-btn d-none d-sm-flex">
+                                    <a class="main-btn" href="/myapp/logout/" onclick="return confirm('Are you sure you want to delete')">Logout </a>
+                                </div>
+                            </nav>
+                        </div> <!-- navigation -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--====== HEADER PART ENDS ======-->
+
+    <!--====== BANNER PART START ======-->
+
+{#    <section class="banner-area bg_cover d-block d-md-flex align-items-center"#}
+{#        style="background-image: url(/static/dashboard/assets/images/banner-bg.png);">#}
+{#        <div class="container" id="22">#}
+{#            <div class="row">#}
+{#                <div class="col-lg-6 col-md-8">#}
+{#                    <div class="banner-content">#}
+{#                        <h1 class="title">Welcome to Sovo Admin Portal!</h1>#}
+{#                        <p>At Sovo, we believe every career has its perfect fit</p>#}
+{#                        <ul>#}
+{#                            <li><a class="main-btn" href="#">Whitepaper</a></li>#}
+{#                            <li><a class="main-btn main-btn-2" href="#">one paper</a></li>#}
+{#                        </ul>#}
+{#                        <span>Join us on <a href="#"><i class="fab fa-facebook-square"></i> 21K</a><a href="#"><i#}
+{#                                    class="fab fa-twitter"></i> 16K</a><a href="#"><i class="fab fa-linkedin"></i>#}
+{#                                21K</a></span>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="banner-thumb">#}
+{#            <img src="/static/dashboard/assets/images/banner-thumb.png" alt="thumb">#}
+{#        </div>#}
+{##}
+{#    </section>#}
+
+    <!--====== BANNER PART ENDS ======-->
+
+    <!--====== ICO SALE PART START ======-->
+
+    <section class="ico-sale-area pt-100 pb-100">
+        <div class="container" id="12">
+
+
+
+
+
+<div class="col-xl-auto">
+            <div class="card card-user">
+              <div class="card-header">
+                  <h3 class="card-title"><center>Add Employee</center></h3>
+              </div>
+              <div class="card-body">
+                <form action="/myapp/addemployee_post/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" placeholder="First Name" name="fname" id="fname"  required pattern="[A-Z a-z.]{3,25}" >
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last Name"  name="lname" id="lname" required>
+                      </div>
+                    </div>
+{#                  </div>#}
+{#                  <div class="row">#}
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="Email" name="email" id="email" required pattern="[a-z_0-9]{2,30}[@][a-z]{2,10}[.][a-z.]{2,20}" >
+                          <div id="uu">
+                          </div>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                          <label>Place</label>
+                          <input type="text" class="form-control" placeholder="Place" name="place" id="place" required pattern="[A-Z a-z.]{3,25}" >
+                        </div>
+
+                      </div>
+                      <div class="col-md-6 pr-1">
+                          <div class="form-group">
+                            <label>Post</label>
+                            <input type="text" class="form-control" placeholder="Post" name="post" id="post" required pattern="[A-Z a-z.]{3,25}"  >
+                          </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 pr-1">
+                            <div class="form-group">
+                              <label>Pin</label>
+                              <input type="text" class="form-control" placeholder="Pin" name="pin" id="pin" required pattern="[0-9]{6}" >
+                            </div>
+                          </div>
+                          </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Gender</label><br>
+                        <label>
+                          <input type="radio" name="gender"  value="male" id="gender" />
+                          Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <label>
+                            <input type="radio" name="gender" value="female" id="gender_1" />
+                            Female</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                          <label>
+                            <input type="radio" name="gender" value="other" id="gender_2" />
+                            Other</label>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Date Of Birth</label>
+                        <input type="date" name="date"  class="form-control" min="1990-01-01" max="2019-12-31" required>
+                      </div>
+                    </div>
+                    </div>
+
+
+
+                      <div class="row">
+                        <div class="col-md-6 pr-1">
+                          <div class="form-group">
+                            <label>Phone Number	</label>
+                            <input type="text" class="form-control" placeholder="Phone Number" name="phone" id="phone" required pattern="[6789][0-9]{9}" >
+                          </div>
+                        </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6 pr-1">
+                            <div class="form-group">
+                              <label>Desigination	</label>
+                              <input type="text" class="form-control" placeholder="Desigination" name="desigination" id="desigination" required pattern="[A-Z a-z.]{3,25}" >
+                            </div>
+                          </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 pr-1">
+                              <div class="form-group">
+                                <label>Phone IMEI	</label>
+                                <input type="text" class="form-control" placeholder="Phone IMEI" name="Imei" id="Imei" required pattern="[0-9]{15}" title="IMEI must be 15 digits long" >
+                              <div id="vv">
+                          </div>
+                              </div>
+                            </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                  <label>Phone Model Name	</label>
+                                  <input type="text" class="form-control" placeholder="Phone Model Name" name="modelname" id="modelname" required pattern="[a-zA-Z0-9-_ ]{2,30}">
+                                </div>
+                              </div>
+                              </div>
+
+                    <div class="row">
+                      <div class="col-md-6 pr-1">
+                        <div class="">
+                          <label>Photo</label><br>
+                          <input type="file" accept="image/*" name="photo" id="photo" required >
+                        </div>
+                      </div>
+                      </div><br>
+
+                              <div class="row">
+                                <div class="col-md-6 pr-1">
+                                  <div class="form-group">
+                                    <label>Password	</label>
+                                    <input type="password" class="form-control" placeholder="Password" name="password" id="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required >
+                                  </div>
+                                </div>
+                                </div>
+
+
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                      <button type="submit" class="btn btn-primary btn-round" name="Submit" id="Submit" value="Submit">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+{#....................................Validation....................#}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+   $(document).ready(function () {
+
+           $("#Submit").hide();
+
+           //email validation
+           $("#email").keyup(function () {
+               var a = $("#email").val();
+               $.ajax({
+                   url: '/myapp/addemp/',
+                   method: 'POST',
+                   data: {'email': a},
+                   success: function (data) {
+                       if (data.status === 'True') {
+                           $("#button").hide();
+                           document.getElementById('uu').style.color='red'
+                           document.getElementById('uu').textContent = 'E-mail already exists';
+                       } else {
+                           document.getElementById('uu').style.color='green'
+                           document.getElementById('uu').textContent = 'E-mail available';
+
+                           $("#Submit").show();
+                       }
+                   }
+               });
+           });
+
+      });
+   </script>
+
+
+      <script>
+   $(document).ready(function () {
+
+           $("#Submit").hide();
+
+           //Imei validation
+           $("#Imei").keyup(function () {
+               var a = $("#Imei").val();
+               $.ajax({
+                   url: '/myapp/checkimei/',
+                   method: 'POST',
+                   data: {'Imei': a},
+                   success: function (data) {
+                       if (data.status === 'True') {
+                           $("#button").hide();
+                           document.getElementById('vv').style.color='red'
+                           document.getElementById('vv').textContent = 'IMEI already exists';
+                       } else {
+                           document.getElementById('vv').style.color='green'
+                           document.getElementById('vv').textContent = 'IMEI available';
+
+                           $("#Submit").show();
+                       }
+                   }
+               });
+           });
+
+      });
+   </script>
+
+
+
+
+
+        </div>
+    </section>
+
+    <!-- ====== ICO SALE PART ENDS ====== -->
+
+
+
+
+<!-- footer -->
+
+
+    <!-- <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-list mt-30">
+                        <h4 class="title">Menu</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-list mt-30">
+                        <h4 class="title">PAPERS</h4>
+                        <ul>
+                            <li><a href="#">White Paper</a></li>
+                            <li><a href="#">Technical Paper</a></li>
+                            <li><a href="#">One Pager</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-list mt-30">
+                        <h4 class="title">legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-list mt-30">
+                        <h4 class="title">Newsletter</h4>
+                        <form action="#">
+                            <div class="input-box">
+                                <input type="text" placeholder="Email Address">
+                                <button><i class="fal fa-arrow-right"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-copyright d-flex justify-content-sm-between justify-content-center align-items-center">
+                        <p>© GFXPARTNER</p>
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fab fa-github"></i></a></li>
+                            <li><a href="#"><i class="fal fa-paper-plane"></i></a></li>
+                            <li><a href="#"><i class="fab fa-btc"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+        <!-- </div>
+    </footer> -->
+
+    <!-- ====== FOOTER PART ENDS ====== -->
+
+    <!--====== scroll_up PART START ======-->
+
+    <a id="scroll_up"><i class="far fa-angle-up"></i></a>
+
+    <!--====== scroll_up PART ENDS ======-->
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+   $(document).ready(function () {
+
+           $("#button").hide();
+
+           //email validation
+           $("#email").keyup(function () {
+               var a = $("#email").val();
+               $.ajax({
+                   url: '/myapp/reg/',
+                   method: 'POST',
+                   data: {'textfield8': a},
+                   success: function (data) {
+                       if (data.status === 'True') {
+                           $("#button").hide();
+                           document.getElementById('uu').textContent = 'E-mail already exists';
+                       } else {
+                           document.getElementById('uu').style.color='green'
+                           document.getElementById('uu').textContent = 'E-mail available';
+
+                           $("#button").show();
+                       }
+                   }
+               });
+           });
+
+
+
+       });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--====== jquery js ======-->
+    <script src="/static/dashboard/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="/static/dashboard/assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="/static/dashboard/assets/js/bootstrap.min.js"></script>
+    <script src="/static/dashboard/assets/js/popper.min.js"></script>
+
+    <!--====== nice select js ======-->
+    <script src="/static/dashboard/assets/js/jquery.nice-select.min.js"></script>
+
+    <!--====== Images Loaded js ======-->
+    <script src="/static/dashboard/assets/js/jquery.syotimer.min.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="/static/dashboard/assets/js/main.js"></script>
+
+</body>
+
+</html>

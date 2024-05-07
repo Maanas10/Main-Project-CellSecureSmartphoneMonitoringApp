@@ -1,0 +1,93 @@
+{% extends 'admin/dashnew.html'  %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"> <center><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#0074dd" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+</svg><i>        <span style="padding-left: 10px;">LOCATION</span>
+                     </i></center></h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                <form action="" method="POST" >
+                {% csrf_token %}
+
+
+{#                <table>#}
+{#                    <tr>#}
+{#                      <td>From&nbsp;&nbsp;&nbsp;&nbsp;</td>#}
+{#                        <td><input type="date" class="form-control"  name="fdate" required> </td>#}
+{#                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To&nbsp;&nbsp;&nbsp;&nbsp;</td>#}
+{#                        <td><input type="date" class="form-control" name="tdate" required> </td>#}
+{##}
+{#                        <td><button type="submit" class="btn btn-primary" name="search1" id="search" value="search">search</button>#}
+{#                        </td>#}
+{##}
+{#                    </tr>#}
+{#                    <br>#}
+{#                </table>#}
+                  <table class="table">
+                    <tr class=" text-primary">
+                      <th>
+                        Slno
+                      </th>
+                        <th>
+                          Place
+                      </th>
+{#                      <th>#}
+{#                          Longitude#}
+{#                      </th>#}
+{##}
+{#                      <th>#}
+{#                          Lattitude#}
+{#                      </th>#}
+                        <th>
+                            Date
+                      </th>
+                        <th>
+
+                        </th>
+
+
+                    </tr>
+                    {% for i in data %}
+                    <tbody>
+{#                      <>#}
+                        <td>&nbsp;{{ forloop.counter }}</td>
+                        <td>{{ i.place }}</td>
+{#                        <td>{{ i.longitude }}</td>#}
+{#                        <td>{{ i.lattitude }}</td>#}
+                        <td>{{ i.date }}</td>
+                        <td><a href="https://www.google.com/maps/dir///{{ i.longitude }},{{ i.lattitude }}">Locate</a> </td>
+
+
+
+
+                      </tr>
+                      {% endfor %}
+
+                    </tbody>
+                  </table>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+</body>
+</html>
+
+{% endblock %}

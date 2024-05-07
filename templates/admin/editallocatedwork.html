@@ -1,0 +1,113 @@
+{% extends 'admin/dashnew.html'  %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<div class="col-xl-auto">
+            <div class="card card-user">
+              <div class="card-header">
+                  <h3 class="card-title"><center>Allocate Work</center></h3>
+              </div>
+              <div class="card-body">
+                <form action="/myapp/editallocatedwork_post/" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{{ data.id }}">
+                    {% csrf_token %}
+
+                  <div class="row">
+                    <div class="col-md-8 pr-1">
+                      <div class="form-group">
+                        <label>Work</label>
+                          <br>
+                          <select name="work" class="form-control w-75">
+                          <option value="">select</option>
+
+                              {% for i in wdata %}
+                                  <option value="{{ i.id }}" {% if data.WORK_id == i.id %}selected{% endif %}>{{ i.work_tittle }}</option>
+
+                              {% endfor %}
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-8 pr-1">
+                      <div class="form-group">
+
+                        <label>Employee</label>
+                          <br>
+                          <select name="employee" class="form-control w-75" >
+                          <option value="">select</option>
+                              {% for i in edata %}
+                                  <option value="{{ i.id }}" {% if data.EMPLOYEE_id == i.id %}selected{% endif %} >{{ i.f_name }}</option>
+
+                              {% endfor %}
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+
+                   <div class="row">
+  <div class="col-md-6 pr-1">
+    <div class="form-group">
+      <label>Start Date</label>
+      <input type="date" name="alldate" id="alldate" class="form-control" value="{{ data.allocated_date|date:'Y-m-d' }}" required>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 pr-1">
+    <div class="form-group">
+      <label>Dead Line</label>
+      <input type="date" name="dddate" id="ddate" class="form-control" value="{{ data.deadline|date:'Y-m-d' }}" required>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get today's date
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var yyyy = today.getFullYear();
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("alldate").min = today;
+
+    // Get selected date from Allocated Date input
+    document.getElementById("alldate").addEventListener("change", function() {
+      var selectedDate = this.value;
+      document.getElementById("ddate").min = selectedDate;
+    });
+
+    // Trigger change event on Start Date input to set minimum date for Dead Line input initially
+    var startDateInput = document.getElementById("alldate");
+    var selectedStartDate = startDateInput.value;
+    document.getElementById("ddate").min = selectedStartDate;
+  });
+</script>
+
+
+
+
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                      <button type="submit" class="btn btn-primary btn-round" name="allocate" id="allocate" value="add">Allocate</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+</body>
+</html>
+{% endblock %}

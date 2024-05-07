@@ -1,0 +1,84 @@
+{% extends 'admin/dashnew.html'  %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"> Employee Table</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                <form action="#" method="POST" >
+{#                {% csrf_token %}#}
+
+
+                <table>
+                    <tr>
+
+                        <td><input type="text" class="form-control" placeholder="Search here..." name="search" required> </td>
+                        <td><button type="submit" class="btn btn-primary" name="search1" id="search" value="search">search</button>
+                        </td>
+
+                    </tr>
+                </table>
+                  <table class="table">
+                    <tr class=" text-primary">
+                      <th>
+                        Slno
+                      </th>
+                      <th>
+                        Employee
+                      </th>
+                      <th>
+                      </th>
+                     <th>
+                      </th>
+                        <th>
+                      </th>
+                        <th>
+                      </th>
+                        <th>
+                      </th>
+                        <th>
+                      </th>
+
+
+                    </tr>
+{#                    {% for i in data %}#}
+                    <tbody>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                              <td><a href="#">View Employee Profile</a></td>
+                               <td><a href="/myapp/calllogs/#12">View Call Logs</a></td>
+                               <td><a href="#">Message Logs</a></td>
+                               <td><a href="#">Location</a></td>
+                               <td><a href="#">Zone</a></td>
+                                <td><a href="#">profile settings</a></td>
+
+                      </tr>
+{#                      {% endfor %}#}
+
+                    </tbody>
+                  </table>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+</body>
+</html>
+
+{% endblock %}

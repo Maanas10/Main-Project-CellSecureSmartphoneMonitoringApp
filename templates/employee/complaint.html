@@ -1,0 +1,58 @@
+{% extends 'employee/empdash12.html' %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+</head>
+
+<body>
+
+<div class="col-xl-auto">
+            <div class="card card-user">
+{#              <div class="card-header">#}
+{#                  <h3 class="card-title"><center>Complaint</center></h3>#}
+{#              </div>#}
+              <div class="card-body">
+                <form action="/myapp/complaint_post/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+{#                  <div class="row">#}
+{#                  </div>#}
+
+{#                  <div class="row">#}
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                          <label><h3 class="card-title"> Complaint?Let Us Know </h3></label>
+                          <br><br>
+                          <label>What has happened??</label>
+                          <textarea class="form-control" row="3" cols="4" name="complaint" placeholder="Please tell us about the incident including as many details as possible" required></textarea>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                          <label>How can we make things right</label>
+                          <textarea class="form-control" row="3" cols="4" name="incident"  required></textarea>
+                      </div>
+                    </div>
+{#                    </div>#}
+
+
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                      <button type="submit" class="btn btn-primary btn-round" name="Add" id="add" value="add">Send</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'employee/empdash12.html'  %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+</head>
+
+<body>
+
+<div class="col-xl-auto">
+            <div class="card card-user">
+              <div class="card-header">
+                  <h3 class="card-title"><center> Work Status </center></h3>
+              </div>
+              <div class="card-body">
+                <form action="/myapp/workstatus_post/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+{#                  <div class="row">#}
+                    <div class="col-md-8 pr-1">
+                      <div class="form-group">
+                        <label>Status</label><br>
+                          &nbsp;&nbsp;&nbsp; <select name="work" class="form-control w-75"  required>
+                          <option value="">Open&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                           <option {% if data.work == 'In Progress' %}selected{% endif %} value="In Progress"> In Progress</option>
+                              <option {% if data.work_status == 'Pending' %}selected{% endif %} value="Pending">Pending</option>
+                              <option {% if data.work == 'Completed' %}selected{% endif %} value="Completed">Completed</option>
+
+<input type="hidden" name="id" value="{{ id }}">
+                          </select>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Description Of Work</label>
+                          <textarea class="form-control" row="3" cols="4" name="desc" ></textarea>
+                      </div>
+                    </div>
+
+
+{#                  </div>#}
+
+{#                  <div class="row">#}
+{#                    <div class="col-md-6 pr-1">#}
+{#                      <div class="form-group">#}
+{#                        <label>Work Description</label>#}
+{#                          <textarea class="form-control" row="3" cols="4" name="desc" required></textarea>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    </div>#}
+
+
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                      <button type="submit" class="btn btn-primary btn-round" name="update" id="update" value="update">Update</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+</body>
+</html>
+{% endblock %}

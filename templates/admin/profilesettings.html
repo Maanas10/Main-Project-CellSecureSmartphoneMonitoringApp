@@ -1,0 +1,119 @@
+{% extends 'admin/dashnew.html'  %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+</head>
+
+<body>
+
+<div class="col-xl-auto">
+            <div class="card card-user">
+              <div class="card-header">
+                  <h3 class="card-title"><center> Profile Settings</center></h3>
+              </div>
+              <div class="card-body">
+                <form action="/myapp/profilesettings_post/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+<input type="hidden" value="{{ imei }}" name="imei"/>
+{#                  <div class="row">#}
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label><b>Format</b></label>
+ <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input type="radio" name="sdcard" {% if data.sdcard == 'On' %}checked{% endif %}  value="On" id="format" />
+                          Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <label>
+                            <input type="radio" name="sdcard" {% if data.sdcard == 'Off' %}checked{% endif %} value="Off" id="format" />
+                            No</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+                      </div></div>
+
+
+
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                          <label><b>Touch Mode</b></label>
+ <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input type="radio" name="touch" {% if data.touchmode == 'Off' %}checked{% endif %} value="Off" id="touch" />
+                          Enable</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <label>
+                            <input type="radio" name="touch" {% if data.touchmode == 'On' %}checked{% endif %} value="On" id="touch" />
+                            Disable</label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+
+                      </div></div>
+
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                          <label><b>Ring Mode</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <label>
+                          <input type="radio" name="ring" {% if data.ringmode == 'GENERAL' %}checked{% endif %} value="GENERAL" id="ring" />
+                          General</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <label>
+                            <input type="radio" name="ring" {% if data.ringmode == 'VIBRATE' %}checked{% endif %} value="VIBRATE" id="ring" />
+                            Vibrate</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <label>
+                            <input type="radio" name="ring"{% if data.ringmode == 'mute' %}checked{% endif %} value="mute" id="ring" />
+                            Silent</label>&nbsp;
+
+
+
+                      </div></div>
+
+
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                          <label><b>Brightness</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input type="range" value= '{{ data.brightness }}' name="bright"  id="bright" />
+                          &nbsp;
+
+
+
+                      </div></div>
+
+{##}
+                    <div class="row">
+                    <div class="col-md-8 pr-1">
+                      <div class="form-group" >
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label><b>WallPaper</b></label>
+                          <br>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <select name="wallpaper" class="form-control w-75"  required>
+                          <option value="">Select&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+
+                           <option {% if data.wallpaper == 'wallpaper1' %}selected{% endif %} value="wallpaper1">Wallpaper 1</option>
+                              <option {% if data.wallpaper == 'wallpaper2' %}selected{% endif %} value="wallpaper2" >Wallpaper 2</option>
+                              <option {% if data.wallpaper == 'wallpaper3' %}selected{% endif %} value="wallpaper3">Wallpaper 3</option>
+
+
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+
+
+<br>
+                    <br>
+
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                      <button type="submit" class="btn btn-primary btn-round" name="Format" id="format" value="format">Update</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+</body>
+</html>
+{% endblock %}

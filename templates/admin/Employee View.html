@@ -1,0 +1,174 @@
+{% extends 'admin/dashnew.html'  %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+    <style>
+        table {
+        border-collapse: collapse;
+        width: 100%; /* Set the width of the table */
+        margin: 20px auto; /* Center the table horizontally */
+    }
+    .pagination {
+        display: inline-block;
+    }
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+    }
+    .pagination a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+    }
+</style>
+
+</head>
+
+<body>
+<div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"> Employee Table</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                <form action="/myapp/admin_employee_search/" method="POST" >
+                {% csrf_token %}
+
+
+                <table>
+                    <tr>
+
+                        <td><input type="text" class="form-control" placeholder="Search here..." name="search" required> </td>
+                        <td><button type="submit" class="btn btn-primary" name="search1" id="search" value="search">search</button>
+                        </td>
+
+                    </tr>
+                </table>
+                  <table class="table" id="myTable">
+                    <tr class=" text-primary">
+                      <th>
+                        Slno
+                      </th>
+                      <th>
+                        Name
+                      </th>
+                      <th>
+                       Address
+                      </th>
+
+
+                     <th>
+                    Desigination
+                      </th>
+                      <th>Phone Number</th>
+                      <th>Phone IMEI</th>
+                      <th>Phone Name</th>
+                      <th>Photo</th>
+                      <th>Gender</th>
+                      <th>Date of Birth</th>
+                      <th>Email</th>
+
+                      <th>&nbsp;</th>
+                      <th>&nbsp;</th>
+
+                    </tr>
+                    {% for i in data %}
+                    <tbody>
+                      <tr>
+                        <td>&nbsp;{{ forloop.counter }}</td>
+                        <td>&nbsp;{{ i.f_name }}&nbsp;{{ i.l_name }}</td>
+                        <td>{{ i.place }} <br>{{ i.post }} <br> {{ i.pin }}</td>
+                        <td>{{ i.desigination }}</td>
+                          <td>{{ i.phonenumber }}</td>
+                        <td>{{ i.phone_imei }}</td>
+                        <td>&nbsp;{{ i.phone_modelname }}</td>
+                        <td><img src="{{ i.photo }} " class="rounded" height="50px" width="200px" alt=""/></td>
+                        <td>{{ i.gender }}</td>
+                        <td>{{ i.dob }}</td>
+                        <td>{{ i.email }}</td>
+                        <td><a href="/myapp/editemployee/{{ i.LOGIN.id }}#12"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+</svg></a></td>
+                        <td><a href="/myapp/deleteemployee/{{ i.LOGIN.id }}#12" onclick="return confirm('Are you sure you want to delete')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+</svg></a></td>
+                      </tr>
+                      {% endfor %}
+
+                    </tbody>
+                  </table>
+
+                </form>
+                <div class="pagination" id="pagination"></div>
+
+<script>
+    var table = document.getElementById("myTable");
+    var rows = table.getElementsByTagName("tr");
+    var numRows = rows.length;
+    var rowsPerPage = 5;
+    var numPages = Math.ceil(numRows / rowsPerPage);
+
+    function displayPage(page) {
+        var start = (page - 1) * rowsPerPage;
+        var end = start + rowsPerPage;
+
+        for (var i = 0; i < numRows; i++) {
+            if (i >= start && i < end) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    }
+
+    function setupPagination() {
+        var pagination = document.getElementById("pagination");
+        for (var i = 1; i <= numPages; i++) {
+            var link = document.createElement("a");
+            link.href = "#";
+            link.textContent = i;
+            link.addEventListener("click", function() {
+                displayPage(parseInt(this.textContent));
+                var current = pagination.querySelector(".active");
+                if (current) {
+                    current.classList.remove("active");
+                }
+                this.classList.add("active");
+            });
+            pagination.appendChild(link);
+        }
+        displayPage(1); // Display the first page by default
+        pagination.firstChild.classList.add("active"); // Highlight the first page link
+    }
+
+    setupPagination();
+</script>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+</body>
+</html>
+
+{% endblock %}

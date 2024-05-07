@@ -1,0 +1,84 @@
+{% extends 'admin/dashnew.html'  %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+    <!-- Add your CSS link here -->
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+        .profile-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .profile-info {
+            flex-grow: 1;
+        }
+        .profile-info h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .profile-info p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .profile-details {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .profile-details p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="{{ data.photo }}" alt="Profile Picture" class="profile-image">
+            <div class="profile-info">
+                <h2>{{ data.f_name }} {{ data.l_name }}</h2>
+                <p>{{ data.email }}</p>
+                <p>{{ data.place }}, {{ data.post }}</p>
+            </div>
+        </div>
+        <div class="profile-details">
+            <p><strong>Pin:</strong> {{ data.pin }}</p>
+            <p><strong>Gender:</strong> {{ data.gender }}</p>
+            <p><strong>Date of Birth:</strong> {{ data.dob }}</p>
+            <p><strong>Phone Number:</strong> {{ data.phonenumber }}</p>
+            <p><strong>Designation:</strong> {{ data.designation }}</p>
+            <p><strong>Phone IMEI:</strong> {{ data.phone_imei }}</p>
+            <p><strong>Phone Model Name:</strong> {{ data.phone_modelname }}</p>
+            <!-- Add other details as needed -->
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends 'admin/dashnew.html'  %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"> <center><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#0074dd" class="bi bi-envelope-open-fill" viewBox="0 0 16 16">
+  <path d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.314l6.709 3.932L8 8.928l1.291.718L16 5.714V5.4a2 2 0 0 0-1.059-1.765zM16 6.873l-5.693 3.337L16 13.372v-6.5Zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516M0 13.373l5.693-3.163L0 6.873z"/>
+</svg><i>        <span style="padding-left: 10px;">MESSAGE LOGS</span>
+                     </i></center></h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+
+                {% csrf_token %}
+
+                <table>
+                    <form action="/myapp/messagelog_search/" method="POST" >
+
+                    <tr>
+                      <td>From&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td><input type="date" class="form-control"  name="fromdate" required> </td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td><input type="date" class="form-control" name="todate" required> </td>
+
+                        <td><button type="submit" class="btn btn-primary" name="search5" id="search" value="search">search</button>
+                        </td>
+
+                    </tr>
+                    <br>
+                    </form>
+                </table>
+
+                  <form action="/myapp/messagelog_search1/" method="post">
+                    {% csrf_token %}
+
+                 <select class="form-control" name="ms_type">
+                  <option value="">All Messages</option>
+                   <option value="incoming">Incoming Messages</option>
+                     <option value="outgoing">Outgoing Messages</option>
+                 </select>
+
+    <button type="submit" class="btn btn-primary" name="search1" id="search11" value="search11">Search</button>
+</form>
+                  <table class="table">
+                    <tr class=" text-primary">
+                      <th>
+                        Slno
+                      </th>
+                      <th>
+                        Phone Number
+                      </th>
+                      <th>
+                          Message Info
+                      </th>
+                        <th>
+                            Type
+                      </th>
+                        <th>
+                            Date&time
+                      </th>
+
+
+                    </tr>
+                    {% for i in data %}
+
+{#                      <>#}
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ i.phonenumber }}</td>
+                        <td>{{ i.sms_info }}</td>
+                        <td>{{ i.type }}</td>
+                         <td>{{ i.date }}</td>
+
+
+
+
+                      </tr>
+                      {% endfor %}
+
+                    </tbody>
+                  </table>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+</body>
+</html>
+
+{% endblock %}
